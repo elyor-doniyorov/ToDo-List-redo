@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('./Poppins-Black.ttf') format('ttf'),
+    url('./Poppins-Black.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+.hello {
+  color: red;
+  background: url('./icon.png');
+}
