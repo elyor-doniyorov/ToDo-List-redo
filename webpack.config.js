@@ -3,22 +3,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: {
-    index: './src/index.js',
+  entry: './src/index.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  devServer: {
+    contentBase: './dist',
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
   ],
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
-  },
-  devServer: {
-    contentBase: './dist',
-  },
   module: {
     rules: [
       {
