@@ -1,6 +1,6 @@
 import './style.css';
 
-const toDoItems = [{ description: 'Go to School', completed: false, index: 0 }, { description: 'Play Footbal', completed: false, index: 1 }, { description: 'Do a Homework', completed: false, index: 2 }];
+const toDoItems = [{ description: 'Work on a project', completed: false, index: 0 }, { description: 'Go to a market', completed: false, index: 1 }, { description: 'Have a rest', completed: false, index: 2 }];
 const listWrap = document.querySelector('.todo-list-wrap');
 
 const implementToDoItems = () => {
