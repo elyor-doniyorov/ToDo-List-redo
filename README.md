@@ -22,8 +22,10 @@ https://rawcdn.githack.com/elyor-doniyorov/ToDo-List-redo/a882da95c3d6e8057d7ced
 
 ## Clone This Project
 ```
-- $ git clone `$ https://github.com/elyor-doniyorov/ToDo-List-redo.git`
-- $ cd ToDo-List-redo
+- git clone `$ https://github.com/elyor-doniyorov/ToDo-List-redo.git`
+- cd ToDo-List-redo
+- Type `npm install`.
+- Now type `npm start`, YAY you can now see the project.
 ```
 
 ## Authors
