@@ -16,7 +16,7 @@ export const updateInput = (item) => {
   newArr[indexOfNewItem].description = item.value;
   localStorage.setItem('myToDos', JSON.stringify(newArr));
 };
-
+// fixed the Index status with the trash icon
 export const removeItem = (item, arr, container) => {
   const newArr = JSON.parse(localStorage.getItem('myToDos'));
   const removedItem = newArr.filter((item2) => item2.index === Number(item.dataset.key))[0];
