@@ -109,11 +109,12 @@ body {
 .todo-list .todo-list-wrap .list-item {
   width: 100%;
   padding: 0;
-  background: white;
+  background: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .todo-list .todo-list-wrap .list-item .list-item-check-name {
@@ -131,6 +132,17 @@ body {
   font-weight: 300;
   font-size: 15px;
   font-family: "Open Sans", sans-serif !important;
+  background-color: transparent;
+}
+
+.todo-list .todo-list-wrap .completed-item .list-item-check-name .description-input {
+  text-decoration: line-through;
+  color: #c1c1c3;
+}
+
+.todo-list .todo-list-wrap .uncompleted-item .list-item-check-name .description-input {
+  text-decoration: none;
+  color: #000;
 }
 
 .todo-list .todo-list-wrap .list-item .list-item-check-name .description-input:focus-visible {
@@ -161,11 +173,34 @@ body {
   background: transparent;
   border: none;
   outline: none;
-  cursor: move;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.todo-list .todo-list-wrap .list-item .remove-item {
+  width: 40px;
+  height: 50px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: #c5c5c5;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.todo-list .todo-list-wrap .list-item .remove-item:hover {
+  color: #545862;
+  transition: 0.3s;
+}
+
+.todo-list .todo-list-wrap .list-item .move-item i {
+  pointer-events: none;
 }
 
 .todo-list .todo-list-wrap .list-item .move-item:hover {
-  cursor: alias;
   color: #545862;
   transition: 0.3s;
 }
