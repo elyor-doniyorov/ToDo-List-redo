@@ -1,4 +1,4 @@
-/* eslint-disable import/no-cycle */
+/* eslint-disable import/no-cycle, no-unused-vars */
 import checkItem from './checkItem.js';
 import descriptionOnFocus from './inputsOnFocus.js';
 import {
@@ -9,13 +9,12 @@ import {
 } from './addRemoveUpdateClear.js';
 import './style.css';
 
-
 let toDoArr = [];
 export const setToDoArr = () => {
   if (JSON.parse(localStorage.getItem('myToDos'))) {
     toDoArr = JSON.parse(localStorage.getItem('myToDos'));
   } else {
-    toDoArr = [];  
+    toDoArr = [];
   }
 };
 setToDoArr();
