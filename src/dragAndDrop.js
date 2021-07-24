@@ -1,3 +1,10 @@
+/* eslint-disable import/no-cycle */
+import { implementToDoItems, setToDoArr } from './index.js';
+import { removeItem, updateInput } from './addRemoveUpdateClear.js';
+import checkItem from './checkItem.js';
+import descriptionOnFocus from './inputsOnFocus.js';
+
+const listWrap = document.querySelector('.todo-list-wrap');
 export const onMouseOver = (event, item) => {
   [...item.childNodes][3].innerHTML = '<i class="fas fa-arrows-alt"></i>';
   [...item.childNodes][3].style.color = '#545862';
@@ -21,7 +28,7 @@ export const onDragStart = (event, item) => {
   item.style.backgroundColor = '#fffeca';
   item.classList.add('active');
 };
-export const onDragEnd = (event, item, arr) => {
+export const onDragEnd = (event, item, arr, container) => {
   item.style.backgroundColor = '#fff';
   item.classList.remove('active');
   const newArr = [];
@@ -37,7 +44,25 @@ export const onDragEnd = (event, item, arr) => {
     const index = i + 1;
     newArr.push({ description, completed, index });
   });
+  container.innerHTML = '';
   localStorage.setItem('myToDos', JSON.stringify(newArr));
+  setToDoArr(newArr);
+  implementToDoItems(newArr);
+  const toDoDescriptionsInputs = [...document.querySelectorAll('.list-item .description-input')];
+  toDoDescriptionsInputs.forEach((item) => item.addEventListener('focusin', (event) => descriptionOnFocus(event, item)));
+  toDoDescriptionsInputs.forEach((item) => item.addEventListener('focusout', (event) => descriptionOnFocus(event, item)));
+  toDoDescriptionsInputs.forEach((item) => item.addEventListener('input', () => updateInput(item)));
+  arr = [...document.querySelectorAll('.list-item')];
+  arr.forEach((item) => {
+    item.addEventListener('mouseover', (event) => onMouseOver(event, item));
+    item.addEventListener('mouseout', (event) => onMouseOut(event, item));
+    item.addEventListener('dragstart', (event) => onDragStart(event, item));
+    item.addEventListener('drop', (event) => onDragEnd(event, item, arr, listWrap));
+  });
+  const removeBtns = document.querySelectorAll('.remove-item');
+  removeBtns.forEach((item) => item.addEventListener('click', () => removeItem(item, arr, container)));
+  const toDoChecksInputs = [...document.querySelectorAll('.list-item .check-item')];
+  toDoChecksInputs.forEach((item) => item.addEventListener('change', () => checkItem(item)));
 };
 export const onDragOver = (event, container) => {
   event.preventDefault();
