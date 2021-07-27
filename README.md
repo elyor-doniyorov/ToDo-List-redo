@@ -17,7 +17,7 @@ Here you can write your to dos, you can check it when you complete it, also you 
 
 ## Live Demo
 
-https://rawcdn.githack.com/elyor-doniyorov/ToDo-List-redo/a882da95c3d6e8057d7ceda24ce2ef4f26051e58/dist/index.html
+https://elyor-doniyorov.github.io/ToDo-List-redo/
 
 
 ## Clone This Project
