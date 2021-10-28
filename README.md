@@ -4,7 +4,7 @@
 
 # ToDo List Project
 
-> This is to do list app.
+> This is a to do list app. You can organize your tasks
 ![screenshot](./Screenshot.png)
 
 Here you can write your to dos, you can check it when you complete it, also you can remove.
