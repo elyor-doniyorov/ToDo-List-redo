@@ -1,5 +1,3 @@
-# ToDo-List-redo
-
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # ToDo List Project
